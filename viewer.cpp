@@ -34,4 +34,5 @@ void Viewer::showPicture(const QString &name, const int32_t &width,
   QPixmap pixmap = QPixmap::fromImage(image);
   ui->label->setAutoFillBackground(true);
   ui->label->setPixmap(pixmap);
+  resize(pixmap.size());
 }

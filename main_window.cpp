@@ -33,3 +33,8 @@ void MainWindow::on_selectionButton_clicked() {
   viewer->showPicture(_fileName, _width, _height);
   viewer->show();
 }
+
+void MainWindow::on_comboBox_currentIndexChanged(int index) {
+  qDebug() << "current index: " << ui->comboBox->currentIndex();
+  qDebug() << "current text: " << ui->comboBox->currentText();
+}

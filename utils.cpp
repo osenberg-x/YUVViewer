@@ -2,6 +2,8 @@
 
 #include <QDebug>
 
+// 格式转换可以使用查表法优化
+
 // static const double B_U_FACTOR = 1.732446;
 // static const double G_U_FACTOR = 0.337633;
 // static const double G_V_FACTOR = 0.698001;

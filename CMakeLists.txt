@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         viewer.ui
         utils.cpp
         utils.h
+        datas.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

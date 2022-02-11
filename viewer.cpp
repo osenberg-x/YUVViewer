@@ -20,6 +20,7 @@ void Viewer::showPicture(const QString &name, const int32_t &width,
     return;
   }
 
+  setWindowTitle(name);
   size_t size = width * height * 3 / 2;
   std::vector<uint8_t> data(size);
   fread(data.data(), 1, size, fp);

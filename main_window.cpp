@@ -29,7 +29,7 @@ void MainWindow::on_selectionButton_clicked() {
   qDebug() << "width: " << _width;
   qDebug() << "height: " << _height;
 
-  Viewer *viewer = new Viewer(this);
+  Viewer *viewer = new Viewer();
   viewer->showPicture(_fileName, _width, _height);
   viewer->show();
 }

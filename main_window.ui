@@ -229,22 +229,6 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuYUVViewer">
-    <property name="title">
-     <string>YUVViewer</string>
-    </property>
-   </widget>
-   <addaction name="menuYUVViewer"/>
-  </widget>
  </widget>
  <resources/>
  <connections/>

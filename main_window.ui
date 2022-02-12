@@ -195,28 +195,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox">
-        <item>
-         <property name="text">
-          <string>YUV420P</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Single Y</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Single U</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Single V</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QComboBox" name="comboBox"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_10">

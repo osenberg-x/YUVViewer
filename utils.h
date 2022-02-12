@@ -7,6 +7,7 @@
 void YUV420P2BGR24(uint8_t *src, const int32_t &width, const int32_t &height,
                    std::vector<uint8_t> *dst);
 
-bool yuv420pToRgb24(uint8_t *ch_YuvData, uint i_width, uint i_height,
-                    uint8_t *ch_RgbData);
+void SingleY2BGR24(uint8_t *src, const int32_t &width, const int32_t &height,
+                   std::vector<uint8_t> *dst);
+
 #endif  // UTILS_H

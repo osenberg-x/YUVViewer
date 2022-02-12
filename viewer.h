@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "datas.h"
+
 namespace Ui {
 class Viewer;
 }
@@ -14,10 +16,11 @@ class Viewer : public QWidget {
   explicit Viewer(QWidget *parent = nullptr);
   ~Viewer();
 
-  void showPicture(const QString &name, const int32_t &width,
-                   const int32_t &height);
+  void showPicture(const PictureAttribute &attribute);
 
  private:
+  QPixmap singleYUV2Pixmap(const uint8_t *data, const int32_t &width,
+                           const int32_t &height);
   Ui::Viewer *ui;
 };
 

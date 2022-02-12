@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "datas.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -24,8 +26,6 @@ class MainWindow : public QMainWindow {
  private:
   Ui::MainWindow *ui;
 
-  int32_t _width;
-  int32_t _height;
-  QString _fileName;
+  PictureAttribute _attr;
 };
 #endif  // MAINWINDOW_H

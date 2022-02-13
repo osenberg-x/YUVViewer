@@ -37,6 +37,69 @@ void YUV420P2BGR24(uint8_t *src, const int32_t &width, const int32_t &height,
       uint8_t y = yData[startY + j];
       uint8_t u = uData[startU + j / 2];
       uint8_t v = vData[startV + j / 2];
+      //      uint8_t u = 128;
+      //      uint8_t v = 128;
+
+      value = y + R_V_FACTOR * (v - 128);
+      uint8_t R = NUM(value);
+      value = y - G_U_FACTOR * (u - 128) - G_V_FACTOR * (v - 128);
+      uint8_t G = NUM(value);
+      value = y + B_U_FACTOR * (u - 128);
+      uint8_t B = NUM(value);
+
+      dst->push_back(B);
+      dst->push_back(G);
+      dst->push_back(R);
+    }
+  }
+}
+
+void YUV420PBrightnessInHalf(uint8_t *src, const int32_t &width,
+                             const int32_t &height, std::vector<uint8_t> *dst) {
+  size_t ySize = width * height;
+  uint8_t *yData = src;
+  uint8_t *uData = src + ySize;
+  uint8_t *vData = src + ySize + ySize / 4;
+
+  int32_t value = 0;
+  for (int32_t i = 0; i < height; ++i) {
+    int32_t startY = i * width;
+    int32_t startU = i / 2 * (width / 2);
+    int32_t startV = startU;
+    for (int32_t j = 0; j < width; ++j) {
+      uint8_t y = yData[startY + j];
+      y >>= 1;
+      uint8_t u = uData[startU + j / 2];
+      uint8_t v = vData[startV + j / 2];
+
+      value = y + R_V_FACTOR * (v - 128);
+      uint8_t R = NUM(value);
+      value = y - G_U_FACTOR * (u - 128) - G_V_FACTOR * (v - 128);
+      uint8_t G = NUM(value);
+      value = y + B_U_FACTOR * (u - 128);
+      uint8_t B = NUM(value);
+
+      dst->push_back(B);
+      dst->push_back(G);
+      dst->push_back(R);
+    }
+  }
+}
+
+void YUV420P2GRAY(uint8_t *src, const int32_t &width, const int32_t &height,
+                  std::vector<uint8_t> *dst) {
+  size_t ySize = width * height;
+  uint8_t *yData = src;
+
+  int32_t value = 0;
+  for (int32_t i = 0; i < height; ++i) {
+    int32_t startY = i * width;
+    int32_t startU = i / 2 * (width / 2);
+    int32_t startV = startU;
+    for (int32_t j = 0; j < width; ++j) {
+      uint8_t y = yData[startY + j];
+      uint8_t u = 128;
+      uint8_t v = 128;
 
       value = y + R_V_FACTOR * (v - 128);
       uint8_t R = NUM(value);

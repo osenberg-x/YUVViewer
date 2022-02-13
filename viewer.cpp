@@ -65,6 +65,24 @@ void Viewer::showPicture(const PictureAttribute &attribute) {
       showPixmap.convertFromImage(image);
       break;
     }
+    case YUVType::YUV420P2GRAY: {
+      std::vector<uint8_t> bgr24Data;
+      bgr24Data.reserve(width * height * 3);
+      YUV420P2GRAY(data.data(), width, height, &bgr24Data);
+      QImage image(bgr24Data.data(), width, height, width * 3,
+                   QImage::Format_BGR888);
+      showPixmap.convertFromImage(image);
+      break;
+    }
+    case YUVType::YUV420PBrightnessHalf: {
+      std::vector<uint8_t> bgr24Data;
+      bgr24Data.reserve(width * height * 3);
+      YUV420PBrightnessInHalf(data.data(), width, height, &bgr24Data);
+      QImage image(bgr24Data.data(), width, height, width * 3,
+                   QImage::Format_BGR888);
+      showPixmap.convertFromImage(image);
+      break;
+    }
     case YUVType::SINGLE_Y: {
       showPixmap = singleYUV2Pixmap(data.data(), width, height);
       break;

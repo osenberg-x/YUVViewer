@@ -6,9 +6,11 @@
 
 enum class YUVType : uint32_t {
   YUV420P = 1,
-  SINGLE_Y = 2,
-  SINGLE_U = 3,
-  SINGLE_V = 4,
+  YUV420P2GRAY,
+  YUV420PBrightnessHalf,
+  SINGLE_Y,
+  SINGLE_U,
+  SINGLE_V,
 };
 Q_DECLARE_METATYPE(YUVType);
 

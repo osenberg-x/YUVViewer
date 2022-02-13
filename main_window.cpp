@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
   QVariant v;
   v.setValue(YUVType::YUV420P);
   ui->comboBox->addItem("YUV420P", v);
+  v.setValue(YUVType::YUV420P2GRAY);
+  ui->comboBox->addItem("YUV420P2GRAY", v);
+  v.setValue(YUVType::YUV420PBrightnessHalf);
+  ui->comboBox->addItem("YUV420PBrightnessHalf", v);
   v.setValue(YUVType::SINGLE_Y);
   ui->comboBox->addItem("Single Y", v);
   v.setValue(YUVType::SINGLE_U);
